@@ -230,6 +230,4 @@ Some videos may not have transcripts available due to:
 
 ---
 
-## License
 
-MIT
