@@ -1,10 +1,10 @@
-VIDMIND — Chat with Any YouTube Video
+VIDMIND — Chat With Any YouTube Video
 
 VIDMIND is an AI system that allows users to chat with any YouTube video by querying its transcript.
 
 Instead of watching an entire video, users can ask questions and receive answers grounded in the transcript with timestamped sources.
 
-The system uses a Retrieval-Augmented Generation (RAG) pipeline that combines transcript processing, hybrid retrieval, and large language models to generate accurate responses.
+The system uses a Retrieval-Augmented Generation (RAG) pipeline combining transcript processing, hybrid retrieval, and large language models to generate accurate responses.
 
 Demo
 
@@ -24,7 +24,7 @@ Example query:
 
 What does the speaker say about AGI risk?
 
-The system retrieves the relevant transcript segments and generates a grounded answer.
+The system retrieves relevant transcript segments and generates a grounded answer.
 
 Features
 
@@ -53,8 +53,7 @@ Transcript Cleaning
  ↓
 Window-Based Chunking
  ↓
-Embedding Generation
-(multilingual-e5-base)
+Embedding Generation (multilingual-e5-base)
  ↓
 Vector Storage (FAISS)
  ↓
@@ -71,7 +70,15 @@ Groq LLaMA Model
 Answer Generation
  ↓
 Answer + Timestamp Sources
-
+Tech Stack
+Component	Technology
+UI	Streamlit
+Transcript Extraction	youtube-transcript-api
+Embeddings	intfloat/multilingual-e5-base
+Vector Database	FAISS
+Keyword Search	BM25
+LLM	Groq (Llama-3.1-8B-Instant)
+Framework	LangChain
 How It Works
 1. Transcript Extraction
 
@@ -159,8 +166,8 @@ Best for:
 
 Example:
 
-"Sam Altman"
-"300 million workers"
+Sam Altman
+300 million workers
 7. Reciprocal Rank Fusion
 
 Results from both retrieval methods are combined using:
@@ -208,17 +215,17 @@ Final performance:
 
 Response time: ~1–3 seconds
 Running Locally
-1. Clone the repository
+Clone the repository
 git clone https://github.com/yourusername/vidmind.git
 cd vidmind
-2. Install dependencies
+Install dependencies
 pip install -r requirements.txt
-3. Add environment variables
+Add environment variables
 
 Create a .env file:
 
 GROQ_API_KEY=your_api_key_here
-4. Run the app
+Run the application
 streamlit run app.py
 
 Open:
@@ -245,7 +252,7 @@ Possible reasons:
 
 Future Improvements
 
-Possible extensions:
+Potential extensions:
 
 • streaming responses
 • multi-video knowledge base
